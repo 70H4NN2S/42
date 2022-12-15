@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 23:47:27 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/15 15:59:52 by jniedens         ###   ########.fr       */
+/*   Created: 2022/12/15 15:50:19 by jniedens          #+#    #+#             */
+/*   Updated: 2022/12/15 15:58:43 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdio.h>
-# include <unistd.h>
-# include <ctype.h>
-# include <string.h>
-# include <stdlib.h>
+#include "libft.h"
 
-int ft_atoi(const char *s);
+size_t  ft_strlen(const char *s)
+{
+  size_t i;
 
-int ft_isalnum(int c);
-int ft_isalpha(int c);
-int ft_isascii(int c);
-int ft_isdigit(int c);
-int ft_isprint(int c);
+  i = 0;
+  while (s[i])
+    i++;
+  return (i);
+}
 
-size_t  ft_strlen(const char *s);
+/*
+int main () {
+  
+  char test[50];
 
-#endif
+  while (1) {
+    printf("Enter a value('e' to exit): ");
+    scanf("%s", test);
+    if (test[0] == 'e' && test[1] == '\0')
+      break;
+    printf("Original function: %ld\n", strlen(test));
+    printf("Actual function: %ld\n\n", ft_strlen(test));
+  }
+}
+*/
