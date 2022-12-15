@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:51:06 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/15 14:57:45 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:00:32 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int ft_atoi(const char *s)
   return (res * sign);
 }
 
-/* String in, int out */
 /* 
 int main () {
   
