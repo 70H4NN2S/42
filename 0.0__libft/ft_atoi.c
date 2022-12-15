@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:51:06 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/14 16:07:47 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/15 14:57:45 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int ft_atoi(const char *s)
 
   sign = 1;
   res = 0;
-  while (ft_isspace(*s))
+  while ((*s >= 9 && *s <= 13) || *s == ' ')
     ++s;
   if (*s == '-')
     sign = -1;
@@ -32,3 +32,20 @@ int ft_atoi(const char *s)
   }
   return (res * sign);
 }
+
+/* String in, int out */
+/* 
+int main () {
+  
+  char test[50];
+
+  while (1) {
+    printf("Enter a value('e' to exit): ");
+    scanf("%s", test);
+    if (test[0] == 'e' && test[1] == '\0')
+      break;
+    printf("Original function: %d\n", atoi(test));
+    printf("Actual function: %d\n\n", ft_atoi(test));
+  }
+}
+*/
