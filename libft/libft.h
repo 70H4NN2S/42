@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 23:47:27 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/16 21:43:03 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/16 22:36:25 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 
 int		ft_atoi(const char *s);
+void	*ft_bzero(void *s, size_t n);
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
