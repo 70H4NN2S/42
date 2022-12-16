@@ -6,30 +6,31 @@
 /*   By: jniedens <jniedens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 18:45:53 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/16 16:00:29 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/16 18:01:24 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char		*ptr_dest;
-	char		*ptr_src;
-	char		*last_src;
-	char		*last_dest;
+	size_t				i;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	ptr_dest = dest;
-	ptr_src = src;
-	if (ptr_dest < ptr_src)
-		while (n--)
-			*ptr_dest++ = *ptr_src++;
-	else
+	if (!dst || !src)
+		return (NULL);
+	d = (unsigned char *) dst;
+	s = (unsigned char *) src;
+	if (s < d)
 	{
-		*last_src = ptr_src + (n - 1);
-		*last_dest = ptr_dest + (n - 1);
-		while (n--)
-			*last_dest-- = *last_src--;
+		d = (unsigned char *) dst + n - 1;
+		s = (unsigned char *) src + n - 1;
+		while (d >= (unsigned char *) dst)
+			*(d--) = *(s--);
 	}
-	return (dest);
+	else
+		memcpy(dst, src, n);
+	return (dst);
 }
