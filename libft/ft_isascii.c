@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: jniedens <jniedens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 15:28:31 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/15 15:38:39 by jniedens         ###   ########.fr       */
+/*   Created: 2022/12/13 15:09:23 by jniedens          #+#    #+#             */
+/*   Updated: 2022/12/16 14:32:12 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isascii(int c)
 {
-  return (c >= 32 && c <= 126);
+	return (c >= 0 && c <= 127);
 }
-
-/*
-int main () {
-  
-  char test = 'a';
-  
-  printf("Original function: %d\n", isprint(test));
-  printf("Actual function: %d\n\n", ft_isprint(test));
-}
-*/

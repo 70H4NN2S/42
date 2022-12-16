@@ -3,32 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: jniedens <jniedens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 14:34:43 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/15 15:21:36 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:35:05 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-  return (ft_isalpha(c) || ft_isdigit(c));
+	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)
+		|| (c >= '0' && c <= '9'));
 }
-
-/*
-int main () {
-  
-  char test[50];
-
-  while (1) {
-    printf("Enter a value('e' to exit): ");
-    scanf("%s", test);
-    if (test[0] == 'e' && test[1] == '\0')
-      break;
-    printf("Original function: %d\n", isalnum(test[0]));
-    printf("Actual function: %d\n\n", ft_isalnum(test[0]));
-  }
-}
-*/

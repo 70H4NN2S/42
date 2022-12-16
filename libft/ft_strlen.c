@@ -3,37 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: jniedens <jniedens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:50:19 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/15 15:58:43 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:33:55 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-  size_t i;
+	size_t	i;
 
-  i = 0;
-  while (s[i])
-    i++;
-  return (i);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
-
-/*
-int main () {
-  
-  char test[50];
-
-  while (1) {
-    printf("Enter a value('e' to exit): ");
-    scanf("%s", test);
-    if (test[0] == 'e' && test[1] == '\0')
-      break;
-    printf("Original function: %ld\n", strlen(test));
-    printf("Actual function: %ld\n\n", ft_strlen(test));
-  }
-}
-*/
