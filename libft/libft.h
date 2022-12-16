@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 23:47:27 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/16 14:34:54 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/16 21:43:03 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 
 size_t	ft_strlen(const char *s);
-
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
