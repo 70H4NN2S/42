@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 00:36:59 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/19 22:46:38 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/19 22:48:00 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,3 @@ void	ft_putnbr_fd(int n, int fd)
 		i++;
 	}
 }
-
