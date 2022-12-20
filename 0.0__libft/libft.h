@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 23:47:27 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/19 00:41:08 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/20 21:35:32 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 #endif
