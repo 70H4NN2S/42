@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 00:36:59 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/19 22:48:00 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/20 21:49:26 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_getlen(int n)
 		return (1);
 }
 
-static int	ft_getn(long n, int unit)
+static int	ft_getnum(long n, int unit)
 {
 	while (unit--)
 		n /= 10;
@@ -48,7 +48,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	while (len - i)
 	{
-		ft_putchar_fd('0' + ft_getn(nbr, len - i - 1), fd);
+		ft_putchar_fd('0' + ft_getnum(nbr, len - i - 1), fd);
 		i++;
 	}
 }
