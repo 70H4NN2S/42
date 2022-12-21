@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: jniedens <johannesniedens@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 00:36:59 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/20 21:49:26 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/21 13:37:38 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
