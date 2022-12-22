@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 23:47:27 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/22 18:47:49 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/22 19:02:40 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,5 @@ char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 #endif
