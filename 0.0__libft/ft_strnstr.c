@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:49:37 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/20 22:02:43 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/23 15:36:55 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (little[0] == '\0' || big == little)
+	if (!*little || big == little)
 		return ((char *)&big[0]);
 	while (len-- && big[i])
 	{

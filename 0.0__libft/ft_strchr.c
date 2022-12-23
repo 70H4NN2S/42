@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jniedens <jniedens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 15:47:31 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/17 17:02:57 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/23 15:31:36 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t			i;
-	unsigned char	uc;
+	unsigned char	*ptr;
 
-	i = 0;
-	uc = (unsigned char) c;
-	while (s[i])
+	ptr = (unsigned char *) s;
+	while (*ptr)
 	{
-		if (s[i] == uc)
-			return ((char *)&s[i]);
-		i++;
+		if (*ptr == (unsigned char) c)
+			return (ptr);
+		ptr++;
 	}
-	if (!uc)
-		return ((char *)&s[i]);
+	if (!c)
+		return (ptr);
 	return (NULL);
 }

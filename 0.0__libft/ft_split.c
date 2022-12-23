@@ -6,19 +6,19 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:01:42 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/22 19:11:19 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/23 14:54:31 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_allocate(char **tab, char const *s, char c)
+static void	ft_split_str(char **arr, char const *s, char c)
 {
-	char		**tab_p;
+	char		**arr_ptr;
 	char const	*tmp;
 
 	tmp = s;
-	tab_p = tab;
+	arr_ptr = arr;
 	while (*tmp)
 	{
 		while (*s == c)
@@ -28,42 +28,42 @@ static void	ft_allocate(char **tab, char const *s, char c)
 			++tmp;
 		if (*tmp == c || tmp > s)
 		{
-			*tab_p = ft_substr(s, 0, tmp - s);
+			*arr_ptr = ft_substr(s, 0, tmp - s);
 			s = tmp;
-			++tab_p;
+			++arr_ptr;
 		}
 	}
-	*tab_p = NULL;
+	*arr_ptr = NULL;
 }
 
 static int	ft_count_words(char const *s, char c)
 {
-	int	word_count;
+	int	count;
 
-	word_count = 0;
+	count = 0;
 	while (*s)
 	{
 		while (*s == c)
 			++s;
 		if (*s)
-			++word_count;
+			++count;
 		while (*s && *s != c)
 			++s;
 	}
-	return (word_count);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**newstrs;
+	char	**arr;
 	size_t	size;
 
 	if (!s)
 		return (NULL);
 	size = ft_count_words(s, c);
-	newstrs = (char **) malloc(sizeof(char *) * (size + 1));
-	if (!newstrs)
+	arr = (char **) malloc(sizeof(char *) * (size + 1));
+	if (!arr)
 		return (NULL);
-	ft_allocate(newstrs, s, c);
-	return (newstrs);
+	ft_split_str(arr, s, c);
+	return (arr);
 }
