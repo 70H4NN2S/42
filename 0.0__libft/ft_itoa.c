@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 23:17:41 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/19 00:33:07 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/23 11:31:09 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,38 +24,31 @@ static int	ft_getlen(int n)
 		return (1);
 }
 
-static int	ft_getn(long n, int unit)
-{
-	while (unit--)
-		n /= 10;
-	return (n % 10);
-}
-
 char	*ft_itoa(int n)
 {
 	char	*res;
-	int		i;
 	int		len;
-	long	nbr;
 
-	i = 0;
-	nbr = n;
 	len = ft_getlen(n);
-	res = (char *) malloc(sizeof(char) * (len + 1));
-	if (res)
+	res = (char *) ft_calloc(len + 1, sizeof(char));
+	if (!res)
+		return (NULL);
+	if (n == 0)
+		res[0] = '0';
+	if (n < 0)
 	{
-		if (nbr < 0)
+		res[0] = '-';
+		if (n == -2147483648)
 		{
-			res[i] = '-';
-			i++;
-			nbr *= -1;
+			res[--len] = '8';
+			n /= 10;
 		}
-		while (len - i)
-		{
-			res[i] = 48 + ft_getn(nbr, len - i - 1);
-			i++;
-		}
-		res[i] = '\0';
+		n = -n;
+	}
+	while (len-- && n != 0)
+	{
+		res[len] = '0' + (n % 10);
+		n /= 10;
 	}
 	return (res);
 }
