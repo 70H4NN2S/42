@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 23:47:27 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/24 17:24:31 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/24 21:37:06 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,7 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+t_list	*ft_lstnew(void *content);
 
 #endif
