@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 10:19:51 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/23 15:15:19 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/24 21:14:40 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 		j++;
 	}
 	if (i < destsize)
-		dest[i + j] = NULL;
+		dest[i + j] = '\0';
 	return (i + ft_strlen(src));
 }

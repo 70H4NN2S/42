@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 15:47:31 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/23 15:54:42 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/24 21:15:45 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ char	*ft_strchr(const char *s, int c)
 	while (*ptr)
 	{
 		if (*ptr == chr)
-			return (ptr);
+			return ((char *) ptr);
 		ptr++;
 	}
 	if (!chr)
-		return (ptr);
+		return ((char *) ptr);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 #    By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 15:10:03 by jniedens          #+#    #+#              #
-#    Updated: 2022/12/24 17:27:28 by jniedens         ###   ########.fr        #
+#    Updated: 2022/12/24 21:18:09 by jniedens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,21 +21,26 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-ARFLAGS = - rcs
+ARFLAGS = -rcs
 RM = rm -rf
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	ar $(ARFLAGS) $(NAME) $(OBJS)
 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+bonus: $(OBJS) $(OBJS_BONUS)
+	ar $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
 
 clean:
-	rm -f *.o
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
-re: clean all
+re: fclean all
 
 .PHONY: all clean fclean re

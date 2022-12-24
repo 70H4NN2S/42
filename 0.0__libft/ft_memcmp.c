@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 22:29:15 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/23 12:07:27 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/24 21:16:54 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	if (n)
 		return (*str1 - *str2);
 	else
-		return (NULL);
+		return (0);
 }
