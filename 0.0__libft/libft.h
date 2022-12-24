@@ -6,17 +6,15 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 23:47:27 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/23 15:44:49 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/24 17:24:31 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stdio.h>
 # include <unistd.h>
-# include <ctype.h>
-# include <string.h>
 # include <stdlib.h>
+# include <limits.h>
 
 /* convert */
 int		ft_atoi(const char *s);
@@ -61,5 +59,12 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char	*s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
+
+/* Bonus */
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 #endif
