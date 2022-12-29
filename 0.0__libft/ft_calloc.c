@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 22:06:28 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/28 11:43:39 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/29 09:34:33 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (nmemb && (nmemb * size) / nmemb != size)
-		return (NULL);
+	if (!nmemb || !size)
+	{
+		nmemb = 1;
+		size = 1;
+	}
 	ptr = (void *) malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
