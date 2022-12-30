@@ -3,20 +3,20 @@ LIBFT = ./libft/libft.a
 NAME = libftprintf.a
 
 SRCS = ft_printf.c
-
 OBJS = $(SRCS:.c=.o)
 
 CC = gcc
+CFLAGS = -c -Wall -Wextra -Werror
+ARFLAGS = -rcs
+RM = rm -rf
 
-FLAG = -c -Wall -Wextra -Werror
+all : $(NAME)
 
 $(NAME): $(OBJS)
 	$(MAKE) bonus -C ./libft
-	cp libft/libft.a $(NAME)
-	$(CC) $(FLAGS) $(SRCS)
-	ar -rcs $(NAME) $(OBJS)
-
-all : $(NAME)
+	cp $(LIBFT) $(NAME)
+	$(CC) $(CFLAGS) $(SRCS)
+	ar $(ARFLAGS) $(NAME) $(OBJS)
 
 clean :
 	$(MAKE) clean -C ./libft
@@ -28,3 +28,4 @@ fclean : clean
 
 re : fclean all
 
+.PHONY: all clean fclean re

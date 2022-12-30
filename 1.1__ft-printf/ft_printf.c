@@ -6,28 +6,14 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:49:38 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/30 20:35:20 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/30 21:14:42 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
-
-void	ft_putstr_fd(char *s, int fd)
-{
-	int	len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	write(fd, s, len);
-}
+#include "./libft/libft.h"
+#include "./libft/ft_putchar_fd.c"
+#include "./libft/ft_putstr_fd.c"
 
 void	ft_check(char c, va_list args)
 {
