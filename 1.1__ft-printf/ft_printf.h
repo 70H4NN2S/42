@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 19:43:33 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/30 21:04:55 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/31 18:28:33 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "./libft/libft.h"
 
 int	ft_printf(const char *str, ...);
 #endif

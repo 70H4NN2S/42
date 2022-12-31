@@ -6,14 +6,11 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:49:38 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/30 21:14:42 by jniedens         ###   ########.fr       */
+/*   Updated: 2022/12/31 18:28:27 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "./libft/libft.h"
-#include "./libft/ft_putchar_fd.c"
-#include "./libft/ft_putstr_fd.c"
 
 void	ft_check(char c, va_list args)
 {
