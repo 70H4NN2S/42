@@ -6,11 +6,11 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:32:23 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/01 10:39:15 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/01 11:35:28 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include "ft_printf.h"
 
 void	ft_puthexlow(unsigned int n)
 {

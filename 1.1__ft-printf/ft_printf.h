@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/01 10:28:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/01 11:35:46 by jniedens         ###   ########.fr       */
+/*   Created: 2023/01/01 11:33:24 by jniedens          #+#    #+#             */
+/*   Updated: 2023/01/01 11:44:39 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdio.h>
 
-void	ft_putnbr(int n)
-{
-	char	c;
+int		ft_printf(const char *str, ...);
+void	ft_putchar(char c);
+void	ft_puthexlow(unsigned int n);
+void	ft_puthexup(unsigned int n);
+void	ft_putnbr(int n);
+void	ft_putstr(char *s);
+void	ft_putunbr(unsigned int n);
+void	ft_putvoidhex(unsigned long long n);
 
-	if (n == -2147483648)
-		write(1, "-2147483648", 11);
-	else if (n < 0)
-	{
-		write(1, "-", 1);
-		ft_putnbr(-n);
-	}
-	else if (n >= 10)
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
-	else
-	{
-		c = n + '0';
-		write(1, &c, 1);
-	}
-}
+#endif
