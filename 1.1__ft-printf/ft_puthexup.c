@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_puthexup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/18 23:14:20 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/23 13:56:17 by jniedens         ###   ########.fr       */
+/*   Created: 2023/01/01 10:33:18 by jniedens          #+#    #+#             */
+/*   Updated: 2023/01/01 10:39:22 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+void	ft_putchar(char c);
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_puthexup(unsigned int n)
 {
-	write(fd, s, ft_strlen(s));
+	if (n >= 16)
+	{
+		ft_puthexup(n / 16);
+		ft_puthexup(n % 16);
+	}
+	else if (n < 10)
+		ft_putchar(n + '0');
+	else
+		ft_putchar(n + 'A' - 10);
 }

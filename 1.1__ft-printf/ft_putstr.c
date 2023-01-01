@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/30 19:43:33 by jniedens          #+#    #+#             */
-/*   Updated: 2022/12/31 18:28:33 by jniedens         ###   ########.fr       */
+/*   Created: 2022/12/18 23:14:20 by jniedens          #+#    #+#             */
+/*   Updated: 2023/01/01 10:30:45 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include <unistd.h>
 
-# include <stdarg.h>
+void	ft_putstr(char *s)
+{
+	int	i;
 
-int	ft_printf(const char *str, ...);
-#endif
+	i = 0;
+	while (s[i])
+		i++;
+	write(1, s, i);
+}
