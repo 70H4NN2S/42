@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 11:33:24 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/01 11:44:39 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/01 21:22:23 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include <unistd.h>
 # include <stdio.h>
 
-int		ft_printf(const char *str, ...);
-void	ft_putchar(char c);
-void	ft_puthexlow(unsigned int n);
-void	ft_puthexup(unsigned int n);
-void	ft_putnbr(int n);
-void	ft_putstr(char *s);
-void	ft_putunbr(unsigned int n);
-void	ft_putvoidhex(unsigned long long n);
+int	ft_printf(const char *str, ...);
+int	ft_putchar(char c);
+int	ft_puthexlow(unsigned int n, int count);
+int	ft_puthexup(unsigned int n, int count);
+int	ft_putnbr(int n, int count);
+int	ft_putstr(char *s);
+int	ft_putunbr(unsigned int n, int count);
+int	ft_putvoidhex(unsigned long long n, int count);
 
 #endif

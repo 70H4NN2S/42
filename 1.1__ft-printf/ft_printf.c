@@ -6,51 +6,58 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:49:38 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/01 11:45:10 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/01 21:25:37 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-static void	ft_check(char c, va_list args)
+static int	ft_check(char c, va_list args)
 {
 	if (c == 'c')
-		ft_putchar(va_arg(args, int));
+		return (ft_putchar(va_arg(args, int)));
 	else if (c == 's')
-		ft_putstr(va_arg(args, char *));
+		return (ft_putstr(va_arg(args, char *)));
 	else if (c == 'd')
-		ft_putnbr(va_arg(args, int));
+		return (ft_putnbr(va_arg(args, int), 0));
 	else if (c == 'u')
-		ft_putunbr(va_arg(args, unsigned int));
+		return (ft_putunbr(va_arg(args, unsigned int), 0));
 	else if (c == 'x')
-		ft_puthexlow(va_arg(args, unsigned int));
+		return (ft_puthexlow(va_arg(args, unsigned int), 0));
 	else if (c == 'X')
-		ft_puthexup(va_arg(args, unsigned int));
+		return (ft_puthexup(va_arg(args, unsigned int), 0));
 	else if (c == 'p')
-		ft_putvoidhex(va_arg(args, unsigned long));
+		return (ft_putvoidhex(va_arg(args, unsigned long), 0));
+	return (0);
 }
 
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
 	int		i;
+	int		len;
 
 	i = 0;
+	len = 0;
 	va_start(args, str);
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		if (str[i] == '%')
 		{
+			len += ft_check(str[i + 1], args);
 			i++;
-			if (str[i] == '%')
-				ft_putchar('%');
-			else
-				ft_check(str[i], args);
 		}
 		else
-			ft_putchar(str[i]);
+			len += ft_putchar(str[i]);
 		i++;
 	}
 	va_end(args);
-	return (0);
+	return (len);
+}
+
+int	main(void)
+{
+	printf("Test%cTest%c%c\n", 'a', 'z', 'b');
+	ft_printf("Test%cTest%c%c\n", 'a', 'z', 'b');
 }

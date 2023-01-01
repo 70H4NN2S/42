@@ -6,31 +6,34 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:28:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/01 11:35:46 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/01 21:10:27 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int n)
+int	ft_putnbr(int n, int count)
 {
-	char	c;
-
 	if (n == -2147483648)
+	{
 		write(1, "-2147483648", 11);
+		count += 11;
+	}
 	else if (n < 0)
 	{
 		write(1, "-", 1);
-		ft_putnbr(-n);
+		count++;
+		n = n * -1;
 	}
-	else if (n >= 10)
+	if (n >= 10)
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		count += ft_putnbr(n / 10, count);
+		count += ft_putnbr(n % 10, count);
 	}
 	else
 	{
-		c = n + '0';
-		write(1, &c, 1);
+		write(1, &n, 1);
+		count++;
 	}
+	return (count);
 }

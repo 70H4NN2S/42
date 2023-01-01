@@ -6,21 +6,26 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:32:23 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/01 11:35:28 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/01 21:08:12 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_puthexlow(unsigned int n)
+int	ft_puthexlow(unsigned int n, int count)
 {
+	char	*hex;
+
+	hex = "0123456789abcdef";
 	if (n >= 16)
 	{
-		ft_puthexlow(n / 16);
-		ft_puthexlow(n % 16);
+		count += ft_puthexlow(n / 16, count);
+		count += ft_puthexlow(n % 16, count);
 	}
-	else if (n < 10)
-		ft_putchar(n + '0');
 	else
-		ft_putchar(n + 'a' - 10);
+	{
+		write(1, &hex[n], 1);
+		count++;
+	}
+	return (count);
 }

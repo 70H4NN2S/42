@@ -6,13 +6,13 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 23:14:20 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/01 11:35:56 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/01 21:16:39 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	int	i;
 
@@ -20,4 +20,5 @@ void	ft_putstr(char *s)
 	while (s[i])
 		i++;
 	write(1, s, i);
+	return (i);
 }
