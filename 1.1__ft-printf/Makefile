@@ -6,7 +6,7 @@
 #    By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/01 11:28:16 by jniedens          #+#    #+#              #
-#    Updated: 2023/01/01 11:32:50 by jniedens         ###   ########.fr        #
+#    Updated: 2023/01/01 22:21:15 by jniedens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ $(NAME): $(OBJS)
 clean:
 	$(RM) $(OBJS)
 
-fclean: clean $(NAME)
+fclean: clean
+	$(RM) $(NAME)
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:49:38 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/01 21:25:37 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:19:05 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,24 @@
 
 static int	ft_check(char c, va_list args)
 {
+	int	count;
+
+	count = 0;
 	if (c == 'c')
-		return (ft_putchar(va_arg(args, int)));
+		count += (ft_putchar(va_arg(args, int)));
 	else if (c == 's')
-		return (ft_putstr(va_arg(args, char *)));
+		count += (ft_putstr(va_arg(args, char *)));
 	else if (c == 'd')
-		return (ft_putnbr(va_arg(args, int), 0));
+		count += (ft_putnbr(va_arg(args, int), 0));
 	else if (c == 'u')
-		return (ft_putunbr(va_arg(args, unsigned int), 0));
+		count += (ft_putunbr(va_arg(args, unsigned int), 0));
 	else if (c == 'x')
-		return (ft_puthexlow(va_arg(args, unsigned int), 0));
+		count += (ft_puthexlow(va_arg(args, unsigned int), 0));
 	else if (c == 'X')
-		return (ft_puthexup(va_arg(args, unsigned int), 0));
+		count += (ft_puthexup(va_arg(args, unsigned int), 0));
 	else if (c == 'p')
-		return (ft_putvoidhex(va_arg(args, unsigned long), 0));
-	return (0);
+		count += (ft_putvoidhex(va_arg(args, unsigned long), 0));
+	return (count);
 }
 
 int	ft_printf(const char *str, ...)
