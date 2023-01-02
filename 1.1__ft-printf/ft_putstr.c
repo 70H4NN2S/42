@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 23:14:20 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/02 10:40:30 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/02 16:04:08 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ int	ft_putstr(char *s)
 
 int	ft_printstr(char *s)
 {
-	int	i;
-
-	i = 0;
 	if (s == NULL)
 		return (ft_putstr("(null)"));
 	else
