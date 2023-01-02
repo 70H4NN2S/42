@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:22:42 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/02 16:34:40 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/02 18:01:10 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,14 @@ int	ft_putpointer(unsigned long long n)
 {
 	int	len;
 
-	len = 0;
-	len += ft_printstr("0x");
-	if (n == 0)
-	{
-		len++;
-		write(1, "0", 1);
-	}
+	if (n == (unsigned long long)0)
+		return (ft_putstr("(nil)"));
 	else
 	{
+		len = 0;
+		len += ft_printstr("0x");
 		ft_putptr(n);
 		len += ft_ptrlen(n);
+		return (len);
 	}
-	return (len);
 }
