@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:49:38 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/02 16:08:45 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/02 16:38:39 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ static int	ft_check(char c, va_list args)
 		count += (ft_putchar(va_arg(args, int)));
 	else if (c == 's')
 		count += (ft_printstr(va_arg(args, char *)));
-	else if (c == 'd')
+	else if (c == 'd' || c == 'i')
 		count += (ft_putnbr(va_arg(args, int)));
 	else if (c == 'u')
-		count += (ft_putunbr(va_arg(args, unsigned int), 0));
+		count += (ft_putunbr(va_arg(args, unsigned int)));
 	else if (c == 'x')
 		count += (ft_puthexlow(va_arg(args, unsigned int), 0));
 	else if (c == 'X')

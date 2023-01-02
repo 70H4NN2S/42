@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 11:33:24 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/02 16:03:00 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/02 16:45:08 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_puthexup(unsigned int n, int count);
 int		ft_putnbr(int n);
 int		ft_printstr(char *s);
 int		ft_putstr(char *s);
-int		ft_putunbr(unsigned int n, int count);
+int		ft_putunbr(unsigned int n);
 int		ft_putpointer(unsigned long long n);
 
 #endif
