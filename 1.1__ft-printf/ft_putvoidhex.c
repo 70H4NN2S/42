@@ -6,13 +6,13 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:22:42 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/02 16:29:00 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/02 16:32:35 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_ptrlen(uintptr_t n)
+static int	ft_ptrlen(unsigned long long n)
 {
 	int	len;
 
@@ -25,7 +25,7 @@ int	ft_ptrlen(uintptr_t n)
 	return (len);
 }
 
-void	ft_putptr(uintptr_t n)
+static void	ft_putptr(unsigned long long n)
 {
 	if (n >= 16)
 	{
