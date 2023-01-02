@@ -6,34 +6,63 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:28:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/01 22:07:54 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/02 10:49:58 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int n, int count)
+static int	ft_intlen(int n)
 {
-	if (n == -2147483648)
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		n *= -1;
+	while (n > 0)
 	{
-		write(1, "-2147483648", 11);
-		count += 11;
+		n /= 10;
+		len++;
 	}
-	else if (n < 0)
+	return (len);
+}
+
+static char	*ft_itoa(int n)
+{
+	char	*str;
+	int		len;
+	int		sign;
+
+	len = ft_intlen(n);
+	sign = 1;
+	if (n < 0)
 	{
-		write(1, "-", 1);
-		count++;
-		n = n * -1;
+		sign = -1;
+		len++;
 	}
-	if (n >= 10)
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	while (len--)
 	{
-		count += ft_putnbr(n / 10, count);
-		count += ft_putnbr(n % 10, count);
+		str[len] = (n % 10) * sign + '0';
+		n /= 10;
 	}
-	else
-	{
-		write(1, &n, 1);
-		count++;
-	}
-	return (count);
+	if (sign == -1)
+		str[0] = '-';
+	return (str);
+}
+
+int	ft_putnbr(int n)
+{
+	char	*num;
+	int		len;
+
+	num = ft_itoa(n);
+	len = ft_printstr(num);
+	free(num);
+	return (len);
 }
