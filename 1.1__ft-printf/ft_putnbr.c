@@ -6,13 +6,14 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:28:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/02 15:46:04 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/02 17:50:14 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <limits.h>
 
-static int	ft_intlen(int n)
+static int	ft_intlen(long n)
 {
 	int	len;
 
@@ -20,7 +21,10 @@ static int	ft_intlen(int n)
 	if (n == 0)
 		return (1);
 	if (n < 0)
+	{
 		n *= -1;
+		len++;
+	}
 	while (n > 0)
 	{
 		n /= 10;
@@ -29,7 +33,7 @@ static int	ft_intlen(int n)
 	return (len);
 }
 
-static char	*ft_itoa(int n)
+static char	*ft_itoa(long n)
 {
 	char	*num;
 	int		len;
