@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:33:18 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/01 21:07:53 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/02 15:26:19 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_puthexup(unsigned int n, int count)
 	hex = "0123456789ABCDEF";
 	if (n >= 16)
 	{
-		count += ft_puthexup(n / 16, count);
-		count += ft_puthexup(n % 16, count);
+		count = ft_puthexup(n / 16, count);
+		count = ft_puthexup(n % 16, count);
 	}
 	else
 	{

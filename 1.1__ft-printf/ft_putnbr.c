@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:28:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/02 10:49:58 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/02 15:46:04 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,27 @@ static int	ft_intlen(int n)
 
 static char	*ft_itoa(int n)
 {
-	char	*str;
+	char	*num;
 	int		len;
-	int		sign;
 
 	len = ft_intlen(n);
-	sign = 1;
+	num = (char *)malloc(sizeof(char) * (len + 1));
+	if (!num)
+		return (NULL);
+	num[len] = '\0';
+	if (n == 0)
+		num[0] = '0';
 	if (n < 0)
 	{
-		sign = -1;
-		len++;
+		num[0] = '-';
+		n *= -1;
 	}
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	str[len] = '\0';
-	while (len--)
+	while (n > 0)
 	{
-		str[len] = (n % 10) * sign + '0';
+		num[--len] = (n % 10) + '0';
 		n /= 10;
 	}
-	if (sign == -1)
-		str[0] = '-';
-	return (str);
+	return (num);
 }
 
 int	ft_putnbr(int n)
@@ -61,6 +59,7 @@ int	ft_putnbr(int n)
 	char	*num;
 	int		len;
 
+	len = 0;
 	num = ft_itoa(n);
 	len = ft_printstr(num);
 	free(num);

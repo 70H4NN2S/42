@@ -6,26 +6,20 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:22:42 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/01 21:19:59 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/02 16:01:41 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putvoidhex(unsigned long long n, int count)
+int	ft_putpointer(unsigned long long n)
 {
-	char	*hex;
+	int	len;
 
-	hex = "0123456789abcdef";
-	if (n >= 16)
-	{
-		count += ft_putvoidhex(n / 16, count);
-		count += ft_putvoidhex(n % 16, count);
-	}
+	len = ft_printstr("0x");
+	if (n == 0)
+		len += write(1, "0", 1);
 	else
-	{
-		write(1, &hex[n], 1);
-		count++;
-	}
-	return (count);
+		len += ft_puthexlow(n, 0);
+	return (len);
 }
