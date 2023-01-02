@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:49:38 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/01 22:19:05 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/02 10:32:26 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_check(char c, va_list args)
 	if (c == 'c')
 		count += (ft_putchar(va_arg(args, int)));
 	else if (c == 's')
-		count += (ft_putstr(va_arg(args, char *)));
+		count += (ft_printstr(va_arg(args, char *)));
 	else if (c == 'd')
 		count += (ft_putnbr(va_arg(args, int), 0));
 	else if (c == 'u')
@@ -61,6 +61,6 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	printf("Test%cTest%c%c\n", 'a', 'z', 'b');
-	ft_printf("Test%cTest%c%c\n", 'a', 'z', 'b');
+	printf("Test%sTest%s%s\n", "", "cba", "I love you");
+	ft_printf("Test%sTest%s%s\n", "", "cba", "I love you");
 }
