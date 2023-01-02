@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:22:42 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/02 16:32:35 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/02 16:34:40 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ static void	ft_putptr(unsigned long long n)
 	else
 	{
 		if (n < 10)
-			write(1, &(n + '0'), 1);
+			ft_putchar(n + '0');
 		else
-			write(1, &(n + 'a' - 10), 1);
+			ft_putchar(n + 'a' - 10);
 	}
 }
 
