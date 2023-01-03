@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: jniedens <jniedens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:28:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/02 17:50:14 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/03 12:47:02 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <limits.h>
 
 static int	ft_intlen(long n)
 {
