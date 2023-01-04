@@ -19,8 +19,8 @@ int	ft_puthexlow(unsigned int n, int count)
 	hex = "0123456789abcdef";
 	if (n >= 16)
 	{
-		count = ft_puthexlow(n / 16, count);
-		count = ft_puthexlow(n % 16, count);
+		count += ft_puthexlow(n / 16, count);
+		count += ft_puthexlow(n % 16, count);
 	}
 	else
 	{

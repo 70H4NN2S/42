@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:22:42 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/02 18:01:10 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/03 12:40:31 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,11 @@ int	ft_putpointer(unsigned long long n)
 		len += ft_ptrlen(n);
 		return (len);
 	}
+}
+
+int main(void)
+{
+	char *s;
+
+	printf("%p", s);
 }
