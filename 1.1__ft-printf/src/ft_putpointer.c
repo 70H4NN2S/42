@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putvoidhex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: jniedens <jniedens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:22:42 by jniedens          #+#    #+#             */
+<<<<<<< HEAD:1.1__ft-printf/ft_putvoidhex.c
 /*   Updated: 2023/01/03 12:40:31 by jniedens         ###   ########.fr       */
+=======
+/*   Updated: 2023/01/03 12:20:12 by jniedens         ###   ########.fr       */
+>>>>>>> 5254b84ce3ef7c37ded92fe0b1d6bc8640fb46b6:1.1__ft-printf/src/ft_putpointer.c
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +50,7 @@ int	ft_putpointer(unsigned long long n)
 	int	len;
 
 	if (n == (unsigned long long)0)
-		return (ft_putstr("(nil)"));
+		return (ft_putstr("0x0"));
 	else
 	{
 		len = 0;

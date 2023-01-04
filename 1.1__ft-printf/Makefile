@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+         #
+#    By: jniedens <jniedens@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/01 11:28:16 by jniedens          #+#    #+#              #
-#    Updated: 2023/01/01 22:21:15 by jniedens         ###   ########.fr        #
+#    Updated: 2023/01/03 12:45:23 by jniedens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,18 @@ AR	= ar
 ARFLAGS = rcs
 RM = rm -f
 
-SRCS = ft_printf.c ft_putchar.c ft_puthexlow.c ft_puthexup.c ft_putnbr.c ft_putstr.c ft_putunbr.c ft_putvoidhex.c
+SRCS = ./src/ft_printf.c ./src/ft_putchar.c ./src/ft_puthexlow.c \
+		./src/ft_puthexup.c ./src/ft_putnbr.c ./src/ft_putstr.c \
+		./src/ft_putunbr.c ./src/ft_putpointer.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
