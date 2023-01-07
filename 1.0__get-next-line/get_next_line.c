@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:25:24 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/06 21:18:52 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/07 22:37:59 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,25 @@
 
 char	*get_next_line(int fd)
 {
-	char		*buffer;
-	static char	*str;
+	char		buffer[BUFFER_SIZE + 1];
+	static char	*str = NULL;
 	int			i;
+	int			line;
 
-	return (str);
+	while ((line = read(fd, buffer, BUFFER_SIZE)) > 0)
+	{
+		buffer[line] = '\ß';
+		str = ft_join(str, buffer);
+		if (((i = ft_find_index(str, '\n')) != -1))
+			return (ft_get_line(&str, line, i));
+	}
+
+	return (line);
 }
 
 int	main(void)
 {
-	int		fd;
-	char	buff[1000];
+	int	fd;
 
-	fd = open("abc.txt", O_CREAT | O_RDONLY);
-	printf("Filedescriptor: %d", fd);
+	fd = open("abc.txt", O_RDONLY);
 }
