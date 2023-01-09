@@ -6,33 +6,37 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:25:24 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/09 23:11:55 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/09 23:15:09 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static int	ft_limit_line(const int fd, char **line, char **buffer)
+static int	ft_read_and_append(char **buffer, int fd)
 {
-	char	*helper;
+	char	*temp;
+	char	*buf;
+	int		size;
 
-	if (ft_strchr(buffer[fd], '\n'))
+	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buf)
+		return (-1);
+	size = read(fd, buf, BUFFER_SIZE);
+	while (size > 0)
 	{
-		*line = ft_strdupchr(buffer[fd], '\n');
-		helper = ft_strdup(buffer[fd] + ft_strlen(*line) + 1);
-		ft_strdel(&buffer[fd]);
-		if (ft_strlen(helper) > 0)
-			buffer[fd] = helper;
-		else
-			ft_strdel(&helper);
+		buf[size] = '\0';
+		temp = *buffer;
+		*buffer = ft_strjoin(*buffer, buf);
+		free(temp);
+		if (ft_strchr(*buffer, '\n'))
+			break ;
+		size = read(fd, buf, BUFFER_SIZE);
 	}
-	else if (buffer[fd])
-	{
-		*line = ft_strdup(buffer[fd]);
-		ft_strdel(&buffer[fd]);
-	}
-	return (1);
+	free(buf);
+	return (size);
 }
+
+
 
 char	*get_next_line(int fd)
 {
