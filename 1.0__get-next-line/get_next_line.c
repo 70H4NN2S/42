@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:25:24 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/09 17:49:51 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/09 23:11:55 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,19 @@ static int	ft_limit_line(const int fd, char **line, char **buffer)
 	return (1);
 }
 
-char	*get_next_line(int fd, char	**line)
+char	*get_next_line(int fd)
 {
 	static char	*buffer;
-	char		*helper;
-	char		ln[BUFFER_SIZE + 1];
-	int			res;
+	char		*line;
+	int			size;
 
-	res = read(fd, ln, BUFFER_SIZE);
-	while (res > 0)
-	{
-		ln[res] = '\0';
-		if (!buffer[fd])
-			buffer[fd] = ft_strmew(1);
-		helper = ft_strjoin(buffer[fd], ln);
-		ft_strdel(&buffer[fd]);
-		buffer[fd] = helper;
-		if (ft_strchr(ln, '\n'))
-			break;
-		res = read(fd, ln, BUFFER_SIZE);
-	}
-	return (ft_limit_line(fd, line, buffer));
+	if (fd < 0 || BUFFER_SIZE < 1)
+		return (NULL);
+	size = ft_read_and_append(&buffer, fd);
+	if (size < 0)
+		return (NULL);
+	if (size == 0 && !buffer)
+		return (NULL);
+	line = ft_save_and_clear(&buffer);
+	return (line);
 }
