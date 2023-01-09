@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:25:24 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/09 23:15:09 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/09 23:38:00 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,27 @@ static int	ft_read_and_append(char **buffer, int fd)
 	}
 	free(buf);
 	return (size);
+}
+
+static char	*ft_save_and_clear(char **buffer)
+{
+	char	*line;
+	char	*temp;
+
+	if (ft_strchr(*buffer, '\n'))
+	{
+		line = ft_strdupchar(*buffer, '\n');
+		temp = *buffer;
+		*buffer = ft_strdup(ft_strchr(*buffer, '\n') + 1);
+		free(temp);
+	}
+	else
+	{
+		line = ft_strdup(*buffer);
+		free(*buffer);
+		*buffer = NULL;
+	}
+	return (line);
 }
 
 
