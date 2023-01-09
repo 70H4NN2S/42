@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:25:24 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/09 23:38:00 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/09 23:45:33 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ static char	*ft_save_and_clear(char **buffer)
 	}
 	return (line);
 }
-
-
 
 char	*get_next_line(int fd)
 {
