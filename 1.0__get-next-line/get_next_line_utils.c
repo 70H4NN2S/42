@@ -6,55 +6,31 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 00:09:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/09 23:01:05 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/09 23:42:23 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlen(const char *str)
 {
-	while (*s != (char)c)
-	{
-		if (!*s++)
-			return (NULL);
-	}
-	return ((char *)s);
-}
-
-char	*ft_strdupchar(const char *s1, char c)
-{
-	char	*str;
-	int		i;
+	size_t	i;
 
 	i = 0;
-	while (s1[i] != c)
+	while (str[i])
 		i++;
-	str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (s1[i] != c)
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	return (i);
 }
 
 char	*ft_strdup(const char *s1)
 {
 	char	*str;
-	int		i;
+	size_t	i;
 
 	i = 0;
-	while (s1[i])
-		i++;
-	str = (char *)malloc(sizeof(char) * (i + 1));
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
 	if (!str)
 		return (NULL);
-	i = 0;
 	while (s1[i])
 	{
 		str[i] = s1[i];
@@ -64,21 +40,3 @@ char	*ft_strdup(const char *s1)
 	return (str);
 }
 
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-void	ft_strdel(char **as)
-{
-	if (as)
-	{
-		free(*as);
-		*as = NULL;
-	}
-}
