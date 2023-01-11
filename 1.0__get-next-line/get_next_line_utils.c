@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 00:09:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/11 13:20:34 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:21:41 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ char	*ft_strdup(const char *str)
  * @param	char const *str2	string to be joined
  * @return	char *str			result of the join
  */
-
 char	*ft_strjoin(char const *str1, char const *str2)
 {
 	char	*str;
