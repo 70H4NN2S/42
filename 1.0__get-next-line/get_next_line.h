@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:44:22 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/11 12:43:25 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/11 14:46:55 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *str);
 char	*ft_strjoin(char const *str1, char const *str2);
 char	*ft_strchr(const char *str, int c);
+char	*ft_substr(char const *str, unsigned int start, size_t len);
 
 #endif

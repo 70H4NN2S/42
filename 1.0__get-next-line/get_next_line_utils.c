@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 00:09:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/11 14:42:50 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/11 14:53:13 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,36 @@ char	*ft_strchr(const char *str, int c)
 	if (str[i] == c)
 		return ((char *)str + i);
 	return (NULL);
+}
+
+/**
+ * @brief	create a substring from a string with a given start and length
+ *
+ * @param	char const		*str	string to be cut
+ * @param	unsigned int	start	starting point of the substring
+ * @param	size_t			len		length of the substring
+ * @return	char			*sub	substring of str
+ */
+char	*ft_substr(char const *str, unsigned int start, size_t len)
+{
+	char	*sub;
+	size_t	i;
+
+	i = 0;
+	if (!str)
+		return (NULL);
+	if (start >= ft_strlen(str))
+		return (ft_strdup(""));
+	if (len > ft_strlen(str + start))
+		len = ft_strlen(str + start);
+	sub = (char *)malloc(sizeof(char) * (len + 1));
+	if (!sub)
+		return (NULL);
+	while (i < len)
+	{
+		sub[i] = str[start + i];
+		i++;
+	}
+	sub[i] = '\0';
+	return (sub);
 }
