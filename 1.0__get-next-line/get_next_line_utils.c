@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 00:09:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/11 13:21:41 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:27:05 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ char	*ft_strjoin(char const *str1, char const *str2)
 	j = 0;
 	if (!str1 || !str2)
 		return (NULL);
-	str = (char *)malloc(sizeof(char) * (ft_strlen(str1) + ft_strlen(str2) + 1));
+	str = (char *)malloc(sizeof(char)
+			* (ft_strlen(str1) + ft_strlen(str2) + 1));
 	if (!str)
 		return (NULL);
 	while (str1[i])
