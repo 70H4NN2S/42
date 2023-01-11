@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:25:24 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/11 14:43:38 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/11 15:39:47 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,21 @@ static char	*ft_get_line(char **buffer)
 {
 	char	*line;
 	char	*temp;
-	int		len;
+	char	*len;
 
-	len = 0;
-	while ((*buffer)[len] != '\n' && (*buffer)[len] != '\0')
-		len++;
-	if ((*buffer)[len] == '\n')
+	len = ft_strchr(*buffer, '\n');
+	if (len)
 	{
-		line = ft_substr(*buffer, 0, len);
-		temp = ft_strdup(&((*buffer)[len + 1]));
+		line = ft_substr(*buffer, 0, len - *buffer + 1);
+		temp = ft_strdup(len + 1);
 		free(*buffer);
 		*buffer = temp;
+		if (!**buffer)
+		{
+			free(*buffer);
+			*buffer = NULL;
+		}
+		return (line);
 	}
 	else
 	{
@@ -89,7 +93,6 @@ char	*get_next_line(int fd)
 {
 	static char	*buffer;
 	char		*line;
-	char		*temp;
 	int			bytes_read;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
