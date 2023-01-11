@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 00:09:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/09 23:46:27 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/09 23:58:54 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-char	*strdupchar(const char *s1, char c)
+char	*ft_strdupchar(const char *s1, char c)
 {
 	char	*str;
 	size_t	i;

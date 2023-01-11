@@ -6,11 +6,14 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:25:24 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/09 23:45:33 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/10 00:00:19 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
+#include <fcntl.h>
+
 
 static int	ft_read_and_append(char **buffer, int fd)
 {
@@ -72,4 +75,24 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = ft_save_and_clear(&buffer);
 	return (line);
+}
+
+int	main(void)
+{
+	int	fd = open("test.txt", O_RDONLY);
+	char *line;
+	int i;
+
+	i = 1;
+	while (i < 30)
+	{
+		(line = get_next_line(fd));
+		printf("%2d| %s", i, line);
+		if (!line)
+			printf("\n");
+		free(line);
+		++i;
+	}
+	close(fd);
+	return (0);
 }
