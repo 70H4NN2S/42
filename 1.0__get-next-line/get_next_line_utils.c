@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 00:09:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/11 13:27:05 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/11 14:42:50 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 /**
  * @brief	Calculates the length of a string.
  *
- * @param	char *str	The string to be measured.
- * @return	size_t i	The length of the string.
+ * @param	char	*str	The string to be measured.
+ * @return	size_t	i		The length of the string.
  */
 size_t	ft_strlen(const char *str)
 {
@@ -31,8 +31,8 @@ size_t	ft_strlen(const char *str)
 /**
  * @brief	duplicates a string
  *
- * @param	char *str	string to be duplicated
- * @return	char *cpy	duplicate of str
+ * @param	char	*str	string to be duplicated
+ * @return	char	*cpy	duplicate of str
  */
 char	*ft_strdup(const char *str)
 {
@@ -55,9 +55,9 @@ char	*ft_strdup(const char *str)
 /**
  * @brief	joins two strings
  *
- * @param	char const *str1	string to be joined
- * @param	char const *str2	string to be joined
- * @return	char *str			result of the join
+ * @param	char const	*str1	string to be joined
+ * @param	char const	*str2	string to be joined
+ * @return	char		*str	result of the join
  */
 char	*ft_strjoin(char const *str1, char const *str2)
 {
@@ -91,9 +91,9 @@ char	*ft_strjoin(char const *str1, char const *str2)
 /**
  * @brief	searches for a character in a string
  *
- * @param	char *str	string to be searched
- * @param	char c		character to be searched for
- * @return	char* 		pointer to the first occurence of c in str or NULL
+ * @param	char	*str	string to be searched
+ * @param	char	c		character to be searched for
+ * @return	char* 			pointer to the first occurence of c in str or NULL
  */
 char	*ft_strchr(const char *str, int c)
 {

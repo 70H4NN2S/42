@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:25:24 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/11 14:15:45 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/11 14:41:41 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 /**
  * @brief	get line from buffer
  *
- * @param	char **buffer	pointer to buffer string
- * @return	char *line		line read from buffer
+ * @param	char 	**buffer	pointer to buffer string
+ * @return	char	*line		line read from buffer
  */
 static char	*ft_get_line(char **buffer)
 {
@@ -46,9 +46,9 @@ static char	*ft_get_line(char **buffer)
 /**
  * @brief	read data from fd and append it to line string until newline is found
  *
- * @param	int fd			file descriptor
- * @param	char **buffer	pointer to buffer string
- * @return	int bytes_read	last bytes read from fd
+ * @param	int		fd			file descriptor
+ * @param	char	**buffer	pointer to buffer string
+ * @return	int		bytes_read	last bytes read from fd
  */
 static int	ft_read(int fd, char **buffer)
 {
@@ -82,8 +82,8 @@ static int	ft_read(int fd, char **buffer)
 /**
  * @brief	returns a line read from a file descriptor
  *
- * @param	int fd	file descriptor
- * @return	char*	line read from file descriptor
+ * @param	int		fd	file descriptor
+ * @return	char*		line read from file descriptor
  */
 char	*get_next_line(int fd)
 {
