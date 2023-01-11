@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 00:09:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/11 13:13:10 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:20:34 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,39 +88,25 @@ char	*ft_strjoin(char const *str1, char const *str2)
 	return (str);
 }
 
-char	*ft_strdupchar(const char *s1, char c)
-{
-	char	*str;
-	size_t	i;
-
-	i = 0;
-	while (s1[i] != c && s1[i])
-		i++;
-	str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (s1[i] != c && s1[i])
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
-
-char	*ft_strchr(const char *s, int c)
+/**
+ * @brief	searches for a character in a string
+ *
+ * @param	char *str	string to be searched
+ * @param	char c		character to be searched for
+ * @return	char* 		pointer to the first occurence of c in str or NULL
+ */
+char	*ft_strchr(const char *str, int c)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i])
+	while (str[i])
 	{
-		if (s[i] == c)
-			return ((char *)s + i);
+		if (str[i] == c)
+			return ((char *)str + i);
 		i++;
 	}
-	if (s[i] == c)
-		return ((char *)s + i);
+	if (str[i] == c)
+		return ((char *)str + i);
 	return (NULL);
 }
