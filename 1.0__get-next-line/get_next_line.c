@@ -6,11 +6,42 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:25:24 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/11 13:54:17 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/11 14:15:45 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+/**
+ * @brief	get line from buffer
+ *
+ * @param	char **buffer	pointer to buffer string
+ * @return	char *line		line read from buffer
+ */
+static char	*ft_get_line(char **buffer)
+{
+	char	*line;
+	char	*temp;
+	int		len;
+
+	len = 0;
+	while ((*buffer)[len] != '\n' && (*buffer)[len] != '\0')
+		len++;
+	if ((*buffer)[len] == '\n')
+	{
+		line = ft_substr(*buffer, 0, len);
+		temp = ft_strdup(&((*buffer)[len + 1]));
+		free(*buffer);
+		*buffer = temp;
+	}
+	else
+	{
+		line = ft_strdup(*buffer);
+		free(*buffer);
+		*buffer = NULL;
+	}
+	return (line);
+}
 
 /**
  * @brief	read data from fd and append it to line string until newline is found
