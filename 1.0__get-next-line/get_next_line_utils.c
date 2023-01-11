@@ -6,12 +6,18 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 00:09:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/09 23:58:54 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:00:29 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+/**
+ * @brief	Calculates the length of a string.
+ *
+ * @param	char *str	The string to be measured.
+ * @return	size_t i	The length of the string.
+ */
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -22,22 +28,28 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strdup(const char *s1)
+/**
+ * @brief	duplicates a string
+ *
+ * @param	char *str	string to be duplicated
+ * @return	char *cpy	duplicate of str
+ */
+char	*ft_strdup(const char *str)
 {
-	char	*str;
+	char	*cpy;
 	size_t	i;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (!str)
+	cpy = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (!cpy)
 		return (NULL);
-	while (s1[i])
+	while (str[i])
 	{
-		str[i] = s1[i];
+		cpy[i] = str[i];
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	cpy[i] = '\0';
+	return (cpy);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
