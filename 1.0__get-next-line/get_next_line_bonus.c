@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 17:36:06 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/12 18:17:12 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/12 18:36:29 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static char	*ft_get_line(char **buffer)
  * @param	char	**buffer	pointer to buffer string
  * @return	int		bytes_read	last bytes read from fd
  */
-static int	*ft_read(int fd, char **buffer)
+static int	ft_read(int fd, char **buffer)
 {
 	char	*temp;
 	char	*buf;
