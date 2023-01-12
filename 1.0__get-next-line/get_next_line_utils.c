@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 00:09:58 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/11 14:53:13 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/12 18:26:07 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char	*ft_strjoin(char const *str1, char const *str2)
  *
  * @param	char	*str	string to be searched
  * @param	char	c		character to be searched for
- * @return	char* 			pointer to the first occurence of c in str or NULL
+ * @return	char 	*ptr	pointer to the first occurence of c in str or NULL
  */
 char	*ft_strchr(const char *str, int c)
 {
