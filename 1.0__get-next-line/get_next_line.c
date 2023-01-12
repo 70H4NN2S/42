@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:25:24 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/11 15:39:47 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/12 17:22:36 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,11 @@ char	*get_next_line(int fd)
 		return (NULL);
 	bytes_read = ft_read(fd, &buffer);
 	if (bytes_read < 0)
+	{
+		free(buffer);
+		buffer = NULL;
 		return (NULL);
+	}
 	if (!bytes_read && !buffer)
 		return (NULL);
 	line = ft_get_line(&buffer);
