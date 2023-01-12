@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:44:22 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/11 14:46:55 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/12 17:30:57 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 150
+#  define BUFFER_SIZE 42
 # endif
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 
 char	*get_next_line(int fd);
