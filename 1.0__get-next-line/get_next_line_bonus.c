@@ -6,7 +6,7 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 17:36:06 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/12 18:36:29 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/01/13 23:54:35 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,11 @@ static int	ft_read(int fd, char **buffer)
  */
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer[MAX_FD];
 	char		*line;
 	int			bytes_read;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > MAX_FD)
 		return (NULL);
 	bytes_read = ft_read(fd, &buffer);
 	if (bytes_read < 0)
@@ -106,6 +106,6 @@ char	*get_next_line(int fd)
 	}
 	if (!bytes_read && !buffer)
 		return (NULL);
-	line = ft_get_line(&buffer);
+	line = ft_get_line(&buffer[fd]);
 	return (line);
 }
