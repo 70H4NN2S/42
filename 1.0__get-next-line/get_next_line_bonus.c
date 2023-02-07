@@ -6,18 +6,12 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 17:36:06 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/13 23:58:57 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/02/07 22:42:16 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-/**
- * @brief	get line from buffer
- *
- * @param	char	**buffer	pointer to buffer string
- * @return	char	*line		line read from buffer
- */
 static char	*ft_get_line(char **buffer)
 {
 	char	*line;
@@ -47,13 +41,6 @@ static char	*ft_get_line(char **buffer)
 	return (line);
 }
 
-/**
- * @brief	read data from fd and append it to line string until newline is found
- *
- * @param	int		fd			file descriptor
- * @param	char	**buffer	pointer to buffer string
- * @return	int		bytes_read	last bytes read from fd
- */
 static int	ft_read(int fd, char **buffer)
 {
 	char	*temp;
@@ -83,12 +70,6 @@ static int	ft_read(int fd, char **buffer)
 	return (bytes_read);
 }
 
-/**
- * @brief	get next line from file descriptor
- *
- * @param	int		fd			file descriptor
- * @return	int		bytes_read	last bytes read from fd
- */
 char	*get_next_line(int fd)
 {
 	static char	*buffer[MAX_FD];

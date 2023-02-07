@@ -6,18 +6,12 @@
 /*   By: jniedens <jniedens@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 18:19:55 by jniedens          #+#    #+#             */
-/*   Updated: 2023/01/12 18:30:19 by jniedens         ###   ########.fr       */
+/*   Updated: 2023/02/07 22:42:16 by jniedens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-/**
- * @brief	Calculate length of string
- *
- * @param	char	*str	The string to be measured
- * @return	size_t	i		The length of the string
- */
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -28,12 +22,6 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-/**
- * @brief	duplicates a string
- *
- * @param	char	*str	string to be duplicated
- * @return	char	*cpy	duplicate of str
- */
 char	*ft_strdup(const char *str)
 {
 	char	*cpy;
@@ -52,13 +40,6 @@ char	*ft_strdup(const char *str)
 	return (cpy);
 }
 
-/**
- * @brief	joins two strings
- *
- * @param	char const	*str1	string to be joined
- * @param	char const	*str2	string to be joined
- * @return	char		*str	result of the join
- */
 char	*ft_strjoin(char const *str1, char const *str2)
 {
 	char	*str;
@@ -88,13 +69,6 @@ char	*ft_strjoin(char const *str1, char const *str2)
 	return (str);
 }
 
-/**
- * @brief	searches for a character in a string
- *
- * @param	char	*str	string to be searched
- * @param	char	c	character to be searched for
- * @return 	char	*ptr	pointer to the first occurence of c in str
- */
 char	*ft_strchr(const char *str, int c)
 {
 	size_t	i;
@@ -111,14 +85,6 @@ char	*ft_strchr(const char *str, int c)
 	return (NULL);
 }
 
-/**
- * @brief 	create a substring from a string with a given start and length
- *
- * @param	char const		*str	string to be cut
- * @param	unsigned int	start	starting point of the substring
- * @param	size_t			len		length of the substring
- * @return	char			*sub	substring of str
- */
 char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
 	char	*sub;
