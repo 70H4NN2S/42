@@ -1,3 +1,6 @@
 [submodule "1.2__get-next-line"]
 	path = 1.2__get-next-line
 	url = git@github.com:70H4NN2S/get-next-line.git
+[submodule "0.0__libft"]
+	path = 0.0__libft
+	url = git@github.com:70H4NN2S/libft.git
